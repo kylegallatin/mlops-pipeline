@@ -1,0 +1,14 @@
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: housing-model
+  namespace: development
+spec:
+  name: housing
+  predictors:
+  - graph:
+      implementation: SKLEARN_SERVER
+      modelUri: model.pkl
+      name: classifier
+    name: default
+    replicas: 1
