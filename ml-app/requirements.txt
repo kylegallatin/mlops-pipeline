@@ -1,4 +1,2 @@
-flask
-pandas 
 sklearn
-boto3
+seldon-core

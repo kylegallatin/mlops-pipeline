@@ -4,7 +4,12 @@ WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip install -r requirements.txt
 
-COPY ./model.pkl /app
+COPY . /app
 
-COPY ./app.py .
-CMD ["python","app.py"]
+EXPOSE 5000
+ENV MODEL_NAME ModelWithMetrics
+ENV API_TYPE REST 
+ENV SERVICE_TYPE MODEL
+ENV PERSISTANCE 0
+
+CMD exec seldon-core-microservice ${MODEL_NAME} ${API_TYPE} --service-type ${SERVICE_TYPE}
