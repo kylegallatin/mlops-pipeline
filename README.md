@@ -34,3 +34,4 @@ Follow steps here: https://www.jenkins.io/doc/book/installing/docker/
 actually fuck that do this:
 https://itnext.io/docker-inside-docker-for-jenkins-d906b7b5f527
 docker-compose up
+8bdb93964897401399a4679d4bf649db
