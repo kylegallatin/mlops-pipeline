@@ -33,7 +33,7 @@ services:
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     # volumes:
     #     - ./dbdata:/var/lib/mysql
-  web:
+  mlflow:
     restart: always
     build: .
     image: mlflow_server
