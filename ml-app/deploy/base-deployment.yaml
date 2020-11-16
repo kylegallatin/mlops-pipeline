@@ -8,11 +8,11 @@ spec:
   predictors:
   - componentSpecs:
     - spec:
-      containers:
-      - name: app 
-        image: seldon-app 
-  - graph:
-      name: classifier
+        containers:
+        - name: app 
+          image: seldon-app 
+    graph:
+      name: app
       endpoint:
         type: REST 
       type: MODEL
