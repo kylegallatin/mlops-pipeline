@@ -10,5 +10,5 @@ features = ["bedrooms","bathrooms","sqft_living","sqft_above","grade",
 feature_df = df[features]
 row = list(feature_df.loc[7,:])
 
-r = requests.post("http://localhost:5001/predict", json={"data":{"ndarray":[row]}})
+r = requests.post("http://localhost:9000/predict", json={"data":{"ndarray":[row]}})
 print(r.content)

@@ -5,12 +5,23 @@ metadata:
   namespace: seldon-system
 spec:
   name: seldon-app
+  metadata:
+  name: httpbin
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v0
+      kind:  Mapping
+      name:  seldon_example_rest_mapping
+      prefix: /seldon-app/
+      service: seldon-app-default-app.seldon-system:8000
   predictors:
   - componentSpecs:
     - spec:
         containers:
         - name: app 
           image: seldon-app 
+          imagePullPolicy: Never
     graph:
       name: app
       endpoint:
