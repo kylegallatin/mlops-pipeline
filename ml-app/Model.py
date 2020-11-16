@@ -1,7 +1,7 @@
 import pickle 
 import sklearn
 
-class ModelWithMetrics(object):
+class Model(object):
 
     def __init__(self):
         print("Initialising")

@@ -1,7 +1,7 @@
 import pandas as pd 
 import requests 
 
-df = pd.read_csv("kc_house_data.csv")
+df = pd.read_csv("../experiment-tracking/kc_house_data.csv")
 
 # choose features
 features = ["bedrooms","bathrooms","sqft_living","sqft_above","grade",
@@ -10,5 +10,5 @@ features = ["bedrooms","bathrooms","sqft_living","sqft_above","grade",
 feature_df = df[features]
 row = list(feature_df.loc[7,:])
 
-r = requests.post("http://localhost:5000/predict", json={"data":{"ndarray":[row]}})
+r = requests.post("http://localhost:5001/predict", json={"data":{"ndarray":[row]}})
 print(r.content)
